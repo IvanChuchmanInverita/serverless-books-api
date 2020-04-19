@@ -1,9 +1,11 @@
 {
   "name": "serverless-books-api",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
-  "private": true,
+  "description": "This API provides the possibility to manage books in the library",
+  "author": {
+    "name": "Ivan Chuchman",
+    "email": "ivan.chuchman@gmail.com"
+  },
   "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rimraf dist",
@@ -24,10 +26,12 @@
     "@nestjs/common": "^7.0.0",
     "@nestjs/core": "^7.0.0",
     "@nestjs/platform-express": "^7.0.0",
+    "@nestjs/swagger": "^4.5.2",
     "aws-serverless-express": "^3.3.8",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.5.4"
+    "rxjs": "^6.5.4",
+    "swagger-ui-express": "^4.1.4"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.0.0",
@@ -45,6 +49,7 @@
     "eslint-plugin-import": "^2.20.1",
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
+    "serverless": "^1.67.3",
     "serverless-offline": "^6.1.4",
     "supertest": "^4.0.2",
     "ts-jest": "25.2.1",
