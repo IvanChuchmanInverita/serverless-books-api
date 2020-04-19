@@ -21,8 +21,8 @@ package:
     - README.md
 
 functions:
-  index:
-    handler: dist/index.handler
+  app:
+    handler: dist/app.handler
     events:
       - http:
           cors: true
@@ -30,5 +30,9 @@ functions:
           method: any
       - http:
           cors: true
-          path: '/{proxy+}'
+          path: '/{any+}'
           method: any
+
+custom:
+  serverless-offline:
+    noPrependStageInUrl: true
