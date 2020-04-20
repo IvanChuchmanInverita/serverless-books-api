@@ -3,7 +3,7 @@ import { ApiResponseProperty } from "@nestjs/swagger";
 export class Book {
     @ApiResponseProperty({
         type: String,
-        example: 'efe1671c5836'
+        example: 'fdbf10ce-afb8-43f3-8de5-9a309f6f6d21'
     })
     uuid: string;
 
@@ -15,13 +15,13 @@ export class Book {
 
     @ApiResponseProperty({
         type: Number,
-        example: 1587334050296
+        example: 1587334050
     })
     releaseDate: number;
 
     @ApiResponseProperty({
-            type: String,
-            example: 'John Doe',
+        type: String,
+        example: 'John Doe',
     })
     authorName: string;
 }
