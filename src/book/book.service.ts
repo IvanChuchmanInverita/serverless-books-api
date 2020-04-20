@@ -1,4 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { ConfigService } from "@nestjs/config";
 import { Book } from "./book.model";
 import { BookDto } from "./book.dto";
 import { v4 as uuid } from 'uuid';
@@ -6,6 +7,9 @@ import { v4 as uuid } from 'uuid';
 @Injectable()
 export class BookService {
     private readonly books: Book[] = [];
+    constructor(
+        private configService: ConfigService
+    ) {}
 
     async create(data: BookDto): Promise<Book> {
         const book = {...data, uuid: uuid() };

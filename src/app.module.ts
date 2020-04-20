@@ -1,8 +1,15 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from "@nestjs/config";
 import { BookModule } from './book/book.module';
 
 @Module({
-    imports: [BookModule],
+    imports: [
+        ConfigModule.forRoot({
+            isGlobal: true,
+            ignoreEnvFile: true
+        }),
+        BookModule
+    ],
     controllers: [],
     providers: [],
 })
