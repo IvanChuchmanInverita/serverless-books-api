@@ -1,0 +1,21 @@
+{
+  "Table": {
+    "TableName": "sls-books-api-dev-books",
+    "KeySchema": [
+      {
+        "AttributeName": "uuid",
+        "KeyType": "HASH"
+      }
+    ],
+    "AttributeDefinitions": [
+      {
+        "AttributeName": "uuid",
+        "AttributeType": "S"
+      }
+    ],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 1,
+      "WriteCapacityUnits": 1
+    }
+  }
+}

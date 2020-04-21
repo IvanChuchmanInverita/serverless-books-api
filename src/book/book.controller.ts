@@ -58,6 +58,7 @@ export class BookController {
     @ApiNotFoundResponse({ description: 'Not found' })
     @ApiOkResponse({ type: Book })
     @Post('book/:bookUuid/update')
+    @HttpCode(200)
     async update(
         @Param('bookUuid', new ParseUUIDPipe()) uuid: string,
         @Body(new ValidationPipe()) book: BookDto
@@ -73,6 +74,6 @@ export class BookController {
     async delete(
         @Param('bookUuid', new ParseUUIDPipe()) uuid: string
     ): Promise<void> {
-        await this.bookService.delete(uuid);
+        return this.bookService.delete(uuid);
     }
 }
