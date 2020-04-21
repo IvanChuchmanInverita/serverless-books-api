@@ -20,6 +20,7 @@ const bootstrapServer = async (): Promise<Server> => {
         .setVersion('1.0')
         .build();
     const document = SwaggerModule.createDocument(app, options);
+    document.servers.push({ url: `/${process.env.STAGE || 'dev'}` });
     SwaggerModule.setup('', app, document);
 
     app.enableCors();
